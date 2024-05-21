@@ -1,7 +1,7 @@
 import de.hskl.itanalyst.alwi.dijkstra.Dijkstra;
 import de.hskl.itanalyst.alwi.dijkstra.Graph;
 import de.hskl.itanalyst.alwi.dijkstra.Node;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class DijkstraTestWithSampleGraph {
 
@@ -56,9 +56,9 @@ public class DijkstraTestWithSampleGraph {
         graph.addNode(nodeG);
 
         Dijkstra dijkstra = new Dijkstra();
-        graph = dijkstra.computePath(graph, nodeA);
+        graph = dijkstra.computePath(graph, nodeF);
 
-        Node target = graph.getNodes().stream().filter(nd -> nd.getName().equals("F")).findFirst().get();
-        System.out.println(target.getShortestPath());
+        Node target = graph.getNodes().stream().filter(nd -> nd.getName().equals("A")).findFirst().get();
+        System.out.println(target.getShortestPath() + " =>target: A");
     }
 }

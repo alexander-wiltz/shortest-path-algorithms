@@ -1,5 +1,5 @@
-# Shortes Path Implemenations
-### Kürzeste Weg auf allgemeinen Graphen
+# Shortest Path Implemenations
+### Kürzeste Wege auf allgemeinen Graphen
 
 ##### Studienarbeit - Alexander Wiltz
 JAVA-Implementierungen von Kürzeste-Wege-Algorithmen
