@@ -5,42 +5,32 @@ import java.util.*;
 public class BellmanFord {
 
     public void findShortestPath(Graph graph, String start, String end) {
-        Node startNode;
-        Node targetNode;
-        Optional<Node> optionalStartNode = graph.getNodes().stream().filter(nd -> nd.getName().equals(start)).findFirst();
-        Optional<Node> optionalTargetNode = graph.getNodes().stream().filter(nd -> nd.getName().equals(end)).findFirst();
-
-        if (optionalStartNode.isPresent() && optionalTargetNode.isPresent()) {
+        Node startNode = null;
+        Optional<Node> optionalStartNode = graph.getNodes().stream().filter(nd -> nd.getName().equalsIgnoreCase(start)).findFirst();
+        if (optionalStartNode.isPresent()) {
             startNode = optionalStartNode.get();
-            targetNode = optionalTargetNode.get();
         } else {
-            startNode = null;
-            targetNode = null;
-            System.out.println("Start or Target not found! Way not computable!");
+            System.out.println("Start not found! Way not computable!");
             return;
         }
 
         List<Node> computed = computeDistances(graph, startNode);
-        for (Node node : computed) {
-            System.out.println(node.getName() + " - " + node.getPredecessor() + ": " + node.getCost());
+        Node currentNode = null;
+        Optional<Node> optionalCurrentNode = computed.stream().filter(nd -> nd.getName().equalsIgnoreCase(end)).findAny();
+        if (optionalCurrentNode.isPresent()) {
+            currentNode = optionalCurrentNode.get();
+        } else {
+            System.out.println("Target not found! Way not computable!");
+            return;
         }
 
-        Node currentNode = computed.stream().filter(nd -> nd.getName().equals(targetNode.getName())).findAny().get();
-        Map<Node, Integer> shortestPath = new HashMap<>();
-
+        StringJoiner stringJoiner = new StringJoiner(" <- ");
         do {
-            Integer weight = currentNode.getNeighbourNodes().get(currentNode.getPredecessor());
-            shortestPath.put(currentNode, weight);
+            stringJoiner.add(currentNode.getName());
             currentNode = currentNode.getPredecessor();
         } while (currentNode != startNode);
 
-        shortestPath.put(startNode, 0);
-
-        StringJoiner stringJoiner = new StringJoiner(" -> ");
-        for (Map.Entry<Node, Integer> entry : shortestPath.entrySet()) {
-            stringJoiner.add(entry.getKey().getName() + "(" + entry.getValue() + ")");
-        }
-
+        stringJoiner.add(startNode.getName());
         System.out.println(stringJoiner.toString());
     }
 
@@ -60,7 +50,6 @@ public class BellmanFord {
                     }
                 }
             }
-
             n -= 1;
         }
 
