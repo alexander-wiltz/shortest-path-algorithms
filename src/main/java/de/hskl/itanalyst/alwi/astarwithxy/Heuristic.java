@@ -1,4 +1,6 @@
-package de.hskl.itanalyst.alwi.astar;
+package de.hskl.itanalyst.alwi.astarwithxy;
+
+import de.hskl.itanalyst.alwi.astarwithxy.interfaces.IScorer;
 
 public class Heuristic implements IScorer<Node> {
     @Override

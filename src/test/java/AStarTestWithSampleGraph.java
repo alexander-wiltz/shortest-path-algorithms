@@ -1,7 +1,7 @@
-import de.hskl.itanalyst.alwi.astar.Graph;
-import de.hskl.itanalyst.alwi.astar.Heuristic;
-import de.hskl.itanalyst.alwi.astar.Node;
-import de.hskl.itanalyst.alwi.astar.RouteFinder;
+import de.hskl.itanalyst.alwi.astarwithxy.Graph;
+import de.hskl.itanalyst.alwi.astarwithxy.Heuristic;
+import de.hskl.itanalyst.alwi.astarwithxy.Node;
+import de.hskl.itanalyst.alwi.astarwithxy.RouteFinder;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

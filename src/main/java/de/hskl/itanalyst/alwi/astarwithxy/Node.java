@@ -1,6 +1,7 @@
-package de.hskl.itanalyst.alwi.astar;
+package de.hskl.itanalyst.alwi.astarwithxy;
 
 
+import de.hskl.itanalyst.alwi.astarwithxy.interfaces.IGraphNode;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;

@@ -1,5 +1,7 @@
-package de.hskl.itanalyst.alwi.astar;
+package de.hskl.itanalyst.alwi.astarwithxy;
 
+import de.hskl.itanalyst.alwi.astarwithxy.interfaces.IGraphNode;
+import de.hskl.itanalyst.alwi.astarwithxy.interfaces.IScorer;
 import lombok.AllArgsConstructor;
 
 import java.util.*;
