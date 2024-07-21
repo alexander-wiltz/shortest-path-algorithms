@@ -41,6 +41,6 @@ public class BellmanFordTestWithSampleGraph {
         graph.addNode(nodeF);
 
         BellmanFord bellmanFord = new BellmanFord();
-        bellmanFord.findShortestPath(graph, "A", "E");
+        bellmanFord.findShortestPath(graph, "A", "f");
     }
 }
