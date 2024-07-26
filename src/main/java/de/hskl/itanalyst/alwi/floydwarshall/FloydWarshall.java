@@ -1,5 +1,7 @@
 package de.hskl.itanalyst.alwi.floydwarshall;
 
+import de.hskl.itanalyst.alwi.general.GeneralGraph;
+
 import java.util.Optional;
 
 public class FloydWarshall {
@@ -7,7 +9,7 @@ public class FloydWarshall {
     private int[][] costs;
     private int[][] successors;
 
-    public void computeWay(Graph graph) {
+    public void computeWay(GeneralGraph<Node> graph) {
         int size = graph.getNodes().size();
         buildAndInitMatrices(graph);
 
@@ -26,7 +28,7 @@ public class FloydWarshall {
         printSolution(costs);
     }
 
-    private void buildAndInitMatrices(Graph graph) {
+    private void buildAndInitMatrices(GeneralGraph<Node> graph) {
         int size = graph.getNodes().size();
         costs = new int[size][size];
         successors = new int[size][size];

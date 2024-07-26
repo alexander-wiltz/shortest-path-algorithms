@@ -37,7 +37,7 @@ public class BellmanFord {
     }
 
     private List<Node> computeDistances(GeneralGraph<Node> graph, Node startNode) {
-        startNode.setCost(0);
+        startNode.setDistance(0);
 
         List<Node> sortedGraph = graph.getNodes().stream().sorted(Comparator.comparing(Node::getName)).toList();
         int n = sortedGraph.size() - 1;
@@ -45,9 +45,9 @@ public class BellmanFord {
         while (n > 0) {
             for (Node currentNode : sortedGraph) {
                 for (Map.Entry<Node, Integer> edge : currentNode.getNeighbourNodes().entrySet()) {
-                    int cost = currentNode.getCost() + edge.getValue();
-                    if (edge.getKey().getCost() > cost) {
-                        edge.getKey().setCost(cost);
+                    int cost = currentNode.getDistance() + edge.getValue();
+                    if (edge.getKey().getDistance() > cost) {
+                        edge.getKey().setDistance(cost);
                         edge.getKey().setPredecessor(currentNode);
                     }
                 }
