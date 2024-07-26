@@ -1,33 +1,31 @@
 package de.hskl.itanalyst.alwi.dijkstra;
 
+import de.hskl.itanalyst.alwi.general.GeneralNode;
 import lombok.Getter;
 import lombok.Setter;
-import lombok.ToString;
 
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-@Getter
-@Setter
-public class Node {
-    private String name;
-    private Integer distance = Integer.MAX_VALUE;
-    private Map<Node, Integer> neighbourNodes = new HashMap<>();
 
+public class Node extends GeneralNode {
+    @Setter
+    @Getter
     private List<Node> shortestPath = new LinkedList<>();
 
     public Node(String name) {
-        this.name = name;
+        super(name);
     }
 
+    @Override
     public void addNeighbour(Node neighbour, int distance) {
-        neighbourNodes.put(neighbour, distance);
+        this.neighbourNodes.put(neighbour, distance);
     }
 
     @Override
     public String toString() {
-        return name;
+        return this.name;
     }
 }

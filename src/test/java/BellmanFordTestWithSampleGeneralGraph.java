@@ -1,9 +1,9 @@
 import de.hskl.itanalyst.alwi.bellmannford.BellmanFord;
-import de.hskl.itanalyst.alwi.bellmannford.Graph;
 import de.hskl.itanalyst.alwi.bellmannford.Node;
+import de.hskl.itanalyst.alwi.general.GeneralGraph;
 import org.junit.jupiter.api.Test;
 
-public class BellmanFordTestWithSampleGraph {
+public class BellmanFordTestWithSampleGeneralGraph {
 
     @Test
     public void setGraphAndStartNodeA_findWay() {
@@ -32,7 +32,7 @@ public class BellmanFordTestWithSampleGraph {
 
         nodeF.addNeighbour(nodeC, 4);
 
-        Graph graph = new Graph();
+        GeneralGraph<Node> graph = new GeneralGraph<>();
         graph.addNode(nodeA);
         graph.addNode(nodeB);
         graph.addNode(nodeC);

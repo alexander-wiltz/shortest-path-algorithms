@@ -3,7 +3,7 @@ import de.hskl.itanalyst.alwi.floydwarshall.Graph;
 import de.hskl.itanalyst.alwi.floydwarshall.Node;
 import org.junit.jupiter.api.Test;
 
-public class FloydWarshallTestSampleGraph {
+public class FloydWarshallTestSampleGeneralGraph {
 
     @Test
     public void setGraphAndStartNodeA_findWay() {

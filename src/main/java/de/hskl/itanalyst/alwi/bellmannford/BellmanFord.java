@@ -1,10 +1,12 @@
 package de.hskl.itanalyst.alwi.bellmannford;
 
+import de.hskl.itanalyst.alwi.general.GeneralGraph;
+
 import java.util.*;
 
 public class BellmanFord {
 
-    public void findShortestPath(Graph graph, String start, String end) {
+    public void findShortestPath(GeneralGraph<Node> graph, String start, String end) {
         Node startNode = null;
         Optional<Node> optionalStartNode = graph.getNodes().stream().filter(nd -> nd.getName().equalsIgnoreCase(start)).findFirst();
         if (optionalStartNode.isPresent()) {
@@ -34,7 +36,7 @@ public class BellmanFord {
         System.out.println(stringJoiner.toString());
     }
 
-    private List<Node> computeDistances(Graph graph, Node startNode) {
+    private List<Node> computeDistances(GeneralGraph<Node> graph, Node startNode) {
         startNode.setCost(0);
 
         List<Node> sortedGraph = graph.getNodes().stream().sorted(Comparator.comparing(Node::getName)).toList();

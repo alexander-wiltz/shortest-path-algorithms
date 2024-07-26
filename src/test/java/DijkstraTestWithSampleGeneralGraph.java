@@ -1,9 +1,9 @@
 import de.hskl.itanalyst.alwi.dijkstra.Dijkstra;
-import de.hskl.itanalyst.alwi.dijkstra.Graph;
+import de.hskl.itanalyst.alwi.general.GeneralGraph;
 import de.hskl.itanalyst.alwi.dijkstra.Node;
 import org.junit.jupiter.api.Test;
 
-public class DijkstraTestWithSampleGraph {
+public class DijkstraTestWithSampleGeneralGraph {
 
     @Test
     public void setGraphAndStartNodeA_findWay() {
@@ -46,7 +46,7 @@ public class DijkstraTestWithSampleGraph {
         nodeG.addNeighbour(nodeE, 9);
         nodeG.addNeighbour(nodeF, 11);
 
-        Graph graph = new Graph();
+        GeneralGraph<Node> graph = new GeneralGraph();
         graph.addNode(nodeA);
         graph.addNode(nodeB);
         graph.addNode(nodeC);

@@ -11,7 +11,7 @@ import java.util.stream.Stream;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class AStarTestWithSampleGraph {
+public class AStarTestWithSampleGeneralGraph {
 
     private Graph<Node> map;
     private RouteFinder<Node> routeFinder;
