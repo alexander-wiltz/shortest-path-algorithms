@@ -1,4 +1,5 @@
 import de.hskl.itanalyst.alwi.floydwarshall.FloydWarshall;
+import de.hskl.itanalyst.alwi.floydwarshall.Graph;
 import de.hskl.itanalyst.alwi.floydwarshall.Node;
 import de.hskl.itanalyst.alwi.general.GeneralGraph;
 import org.junit.jupiter.api.Test;
@@ -21,7 +22,7 @@ public class FloydWarshallTestSampleGeneralGraph {
         nodeE.addNeighbour(nodeA, 3);
         nodeE.addNeighbour(nodeB, 5);
 
-        GeneralGraph<Node> graph = new GeneralGraph<>();
+        Graph graph = new Graph();
         graph.addNode(nodeA);
         graph.addNode(nodeB);
         graph.addNode(nodeC);

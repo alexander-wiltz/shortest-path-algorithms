@@ -56,9 +56,8 @@ public class DijkstraTestWithSampleGeneralGraph {
         graph.addNode(nodeG);
 
         Dijkstra dijkstra = new Dijkstra();
-        graph = dijkstra.computePath(graph, nodeF);
+        dijkstra.computePath(graph, nodeF);
 
-        Node target = graph.getNodes().stream().filter(nd -> nd.getName().equals("A")).findFirst().get();
-        System.out.println(target.getShortestPath() + " =>target: A");
+        System.out.println(nodeA.getShortestPath() + " =>target: A");
     }
 }

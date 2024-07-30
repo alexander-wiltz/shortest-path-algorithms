@@ -2,14 +2,11 @@ package de.hskl.itanalyst.alwi.dijkstra;
 
 import de.hskl.itanalyst.alwi.general.GeneralGraph;
 
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class Dijkstra {
 
-    public GeneralGraph computePath(GeneralGraph graph, Node start) {
+    public void computePath(GeneralGraph graph, Node start) {
         start.setDistance(0);
 
         Set<Node> settledNodes = new HashSet<>();
@@ -32,8 +29,6 @@ public class Dijkstra {
 
             settledNodes.add(currentNode);
         }
-
-        return graph;
     }
 
     private void updateDistance(Node source, Node evaluation, Integer distance) {
