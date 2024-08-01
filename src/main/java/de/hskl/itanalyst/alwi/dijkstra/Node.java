@@ -7,8 +7,8 @@ import lombok.Setter;
 import java.util.LinkedList;
 import java.util.List;
 
-@Setter
 @Getter
+@Setter
 public class Node extends GeneralNode<Node> {
     private List<Node> shortestPath = new LinkedList<>();
 
@@ -16,8 +16,12 @@ public class Node extends GeneralNode<Node> {
         super(name);
     }
 
-    @Override
     public void addNeighbour(Node neighbour, int distance) {
         this.neighbourNodes.put(neighbour, distance);
+    }
+
+    @Override
+    public String toString() {
+        return name;
     }
 }

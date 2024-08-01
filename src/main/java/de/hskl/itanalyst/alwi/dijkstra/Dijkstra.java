@@ -6,7 +6,7 @@ import java.util.*;
 
 public class Dijkstra {
 
-    public void computePath(GeneralGraph graph, Node start) {
+    public void computePath(Node start) {
         start.setDistance(0);
 
         Set<Node> settledNodes = new HashSet<>();
@@ -29,6 +29,10 @@ public class Dijkstra {
 
             settledNodes.add(currentNode);
         }
+    }
+
+    public void print(Node target) {
+        System.out.println(target.getShortestPath() + " =>target: " + target);
     }
 
     private void updateDistance(Node source, Node evaluation, Integer distance) {
