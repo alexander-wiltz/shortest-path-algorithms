@@ -7,10 +7,9 @@ import java.util.*;
 public class Dijkstra {
 
     public void computePath(Node start) {
-        start.setDistance(0);
-
         Set<Node> settledNodes = new HashSet<>();
         Set<Node> unsettledNodes = new HashSet<>();
+        start.setDistance(0);
         unsettledNodes.add(start);
 
         while (!unsettledNodes.isEmpty()) {
@@ -21,7 +20,7 @@ public class Dijkstra {
                 Node neighbourNode = neighbour.getKey();
                 int neighbourDistance = neighbour.getValue();
 
-                if(!settledNodes.contains(neighbourNode)) {
+                if (!settledNodes.contains(neighbourNode)) {
                     updateDistance(currentNode, neighbourNode, neighbourDistance);
                     unsettledNodes.add(neighbourNode);
                 }
@@ -48,8 +47,8 @@ public class Dijkstra {
         Node currentNode = null;
         int currentDistance = Integer.MAX_VALUE;
         for (Node node : unsettledNodes) {
-            if (node.getDistance() < currentDistance) {
-                currentDistance = node.getDistance();
+            if (node.getDistance() < Integer.MAX_VALUE) {
+                //currentDistance = node.getDistance();
                 currentNode = node;
             }
         }

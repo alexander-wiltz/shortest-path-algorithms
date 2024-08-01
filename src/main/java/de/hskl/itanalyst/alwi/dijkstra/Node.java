@@ -19,9 +19,4 @@ public class Node extends GeneralNode<Node> {
     public void addNeighbour(Node neighbour, int distance) {
         this.neighbourNodes.put(neighbour, distance);
     }
-
-    @Override
-    public String toString() {
-        return name;
-    }
 }
