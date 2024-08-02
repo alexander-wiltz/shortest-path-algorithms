@@ -1,17 +1,7 @@
 import de.hskl.itanalyst.alwi.astar.AStar;
 import de.hskl.itanalyst.alwi.astar.Node;
-import de.hskl.itanalyst.alwi.astarwithxy.Graph;
-import de.hskl.itanalyst.alwi.astarwithxy.Heuristic;
-import de.hskl.itanalyst.alwi.astarwithxy.RouteFinder;
 import de.hskl.itanalyst.alwi.general.GeneralGraph;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import java.util.*;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
-
-import static org.assertj.core.api.Assertions.assertThat;
 
 public class AStarTestWithSampleGeneralGraph {
 
