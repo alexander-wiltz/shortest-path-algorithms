@@ -24,6 +24,7 @@ public class FloydWarshall {
         }
 
         printSolution(costs);
+        printSolution(successors);
     }
 
     private void buildAndInitMatrices(Graph graph) {
