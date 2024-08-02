@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 public class AStarTestWithSampleGeneralGraph {
 
     @Test
-    public void setGraph_StartNodeA_TargetNodeF_findWayWithEdgeImplementation() {
+    public void setGraph_StartNodeA_TargetNodeF_findWay() {
         GeneralGraph<Node> graph = new GeneralGraph<>();
         Node nodeA = new Node("A", 1.0, 6.0);
         Node nodeB = new Node("B", 16.0, 41.0);
