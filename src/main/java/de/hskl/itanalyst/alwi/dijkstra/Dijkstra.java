@@ -23,7 +23,7 @@ public class Dijkstra {
             Node currentNode = getClosestDistances(unvisitedNodes, distances);
             unvisitedNodes.remove(currentNode);
 
-            for (GeneralEdge<Node> adjacencyList : graph.getEdges(currentNode)) {
+            for (GeneralEdge<Node> adjacencyList : graph.getEdgesByNode(currentNode)) {
                 if (unvisitedNodes.contains(adjacencyList.getDestination())) {
                     Integer distance = distances.get(currentNode) + adjacencyList.getWeight();
                     if (distance < distances.get(adjacencyList.getDestination())) {

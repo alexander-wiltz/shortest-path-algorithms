@@ -6,7 +6,8 @@ import org.junit.jupiter.api.Test;
 public class BellmanFordTestWithSampleGeneralGraph {
 
     @Test
-    public void setGraphAndStartNodeA_findWay() {
+    public void setGraph_StartNodeA_findWay() {
+        GeneralGraph<Node> graph = new GeneralGraph<>();
         Node nodeA = new Node("A");
         Node nodeB = new Node("B");
         Node nodeC = new Node("C");
@@ -14,33 +15,28 @@ public class BellmanFordTestWithSampleGeneralGraph {
         Node nodeE = new Node("E");
         Node nodeF = new Node("F");
 
-        nodeA.addNeighbour(nodeB, 4);
-        nodeA.addNeighbour(nodeD, 3);
+        graph.addNewNode(nodeA);
+        graph.addNewNode(nodeB);
+        graph.addNewNode(nodeC);
+        graph.addNewNode(nodeD);
+        graph.addNewNode(nodeE);
+        graph.addNewNode(nodeF);
 
-        nodeB.addNeighbour(nodeC,5);
-        nodeB.addNeighbour(nodeE, 4);
-
-        nodeC.addNeighbour(nodeB, 5);
-        nodeC.addNeighbour(nodeF, -2);
-
-        nodeD.addNeighbour(nodeA, 4);
-        nodeD.addNeighbour(nodeE, 3);
-
-        nodeE.addNeighbour(nodeB, -3);
-        nodeE.addNeighbour(nodeD, 3);
-        nodeE.addNeighbour(nodeF, 2);
-
-        nodeF.addNeighbour(nodeC, 4);
-
-        GeneralGraph<Node> graph = new GeneralGraph<>();
-        graph.addNode(nodeA);
-        graph.addNode(nodeB);
-        graph.addNode(nodeC);
-        graph.addNode(nodeD);
-        graph.addNode(nodeE);
-        graph.addNode(nodeF);
+        graph.addEdge(nodeA, nodeB, 4);
+        graph.addEdge(nodeA, nodeD, 3);
+        graph.addEdge(nodeB, nodeC, 5);
+        graph.addEdge(nodeB, nodeE, 4);
+        graph.addEdge(nodeC, nodeB, 5);
+        graph.addEdge(nodeC, nodeF, -2);
+        graph.addEdge(nodeD, nodeA, 4);
+        graph.addEdge(nodeD, nodeE, 3);
+        graph.addEdge(nodeE, nodeB, -3);
+        graph.addEdge(nodeE, nodeD, 3);
+        graph.addEdge(nodeE, nodeF, 2);
+        graph.addEdge(nodeF, nodeC, 4);
 
         BellmanFord bellmanFord = new BellmanFord();
-        bellmanFord.findShortestPath(graph, "A", "f");
+        bellmanFord.computeShortestPath(graph, nodeA, nodeF);
+        bellmanFord.showPath();
     }
 }

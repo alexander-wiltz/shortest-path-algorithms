@@ -13,9 +13,4 @@ public class Node extends GeneralNode<Node> {
         this.x = x;
         this.y = y;
     }
-
-    @Override
-    protected void addNeighbour(Node neighbour, int distance) {
-
-    }
 }

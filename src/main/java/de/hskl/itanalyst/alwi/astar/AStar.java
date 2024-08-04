@@ -34,7 +34,7 @@ public class AStar {
                 return;
             }
 
-            for (GeneralEdge<Node> edge : graph.getEdges(currentNode)) {
+            for (GeneralEdge<Node> edge : graph.getEdgesByNode(currentNode)) {
                 Node neighbour = edge.getDestination();
                 Double tentativeGScore = gScores.get(currentNode) + edge.getWeight();
 

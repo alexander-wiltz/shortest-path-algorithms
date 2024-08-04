@@ -7,7 +7,8 @@ import java.util.Map;
 
 public class Heuristic {
 
-    // average Speed calculated by Euclidean distance between node D and node f (distance divided by weight)
+    // average Speed calculated by Euclidean distance
+    // between node D and node F (distance divided by weight)
     private static final Double vMAX = 2.0258;
 
     /**
