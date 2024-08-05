@@ -1,6 +1,5 @@
 package de.hskl.itanalyst.alwi.general;
 
-import lombok.Getter;
 import lombok.Setter;
 
 @Setter

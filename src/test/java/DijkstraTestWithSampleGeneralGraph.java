@@ -38,8 +38,7 @@ public class DijkstraTestWithSampleGeneralGraph {
         graph.addUndirectedEdge(nodeF, nodeG, 11);
 
         Dijkstra dijkstra = new Dijkstra();
-        dijkstra.computeShortestPaths(graph, nodeF);
-        dijkstra.printShortestPath(nodeA);
-        dijkstra.showPath(nodeA);
+        dijkstra.computeShortestPaths(graph,nodeA, nodeF);
+        dijkstra.showPath();
     }
 }

@@ -9,15 +9,16 @@ import java.util.*;
 public class Dijkstra {
 
     private final Map<Node, Node> predecessors = new HashMap<>();
+    private final List<Node> shortestPath = new ArrayList<>();
 
-    public void computeShortestPaths(@NonNull GeneralGraph<Node> graph, Node start) {
+    public void computeShortestPaths(@NonNull GeneralGraph<Node> graph, Node start, Node target) {
         Map<Node, Integer> distances = new HashMap<>();
         Set<Node> unvisitedNodes = new HashSet<>(graph.getAllNodes());
 
         for (Node node : unvisitedNodes) {
             distances.put(node, Integer.MAX_VALUE);
         }
-        distances.put(start, 0);
+        distances.put(target, 0);
 
         while (!unvisitedNodes.isEmpty()) {
             Node currentNode = getClosestDistances(unvisitedNodes, distances);
@@ -33,13 +34,10 @@ public class Dijkstra {
                 }
             }
         }
-    }
 
-    public List<Node> printShortestPath(Node target) {
-        List<Node> shortestPath = new ArrayList<>();
-        Node currentNode = target;
+        Node currentNode = start;
         if (predecessors.get(currentNode) == null) {
-            return null;
+            return;
         }
 
         shortestPath.add(currentNode);
@@ -49,11 +47,10 @@ public class Dijkstra {
         }
 
         Collections.reverse(shortestPath);
-        return shortestPath;
     }
 
-    public void showPath(Node target) {
-        System.out.println(printShortestPath(target));
+    public void showPath() {
+        System.out.println(shortestPath);
     }
 
     private Node getClosestDistances(Set<Node> unvisitedNodes, Map<Node, Integer> distances) {
